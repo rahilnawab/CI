@@ -13,7 +13,7 @@ pipeline {
         stage('Build docker image'){
             steps{
                 script{
-                    sh 'docker build -t rahilnawab/devops-integration .'
+                    bat 'docker build -t rahilnawab/devops-integration .'
                 }
             }
         }
@@ -21,7 +21,7 @@ pipeline {
             steps{
                 script{
                    withCredentials([string(credentialsId: 'Dockerhub', variable: 'dockerhub')]) {
-                   sh 'docker login -u rahilnawab -p ${dockerhub}'
+                   bat 'docker login -u rahilnawab -p ${dockerhub}'
 
 }
                    sh 'docker push rahilnawab/devops-integration'
