@@ -4,8 +4,9 @@ pipeline {
         maven 'maven_3_5_0'
     }
     environment {
-      DOCKERHUB_CREDENTIALS = credentials('dockerhub-pwd')
-	  dockerImage = ''
+      registry = "rahilnawab/devops-integration"
+      registryCredential = 'dockerhub'
+      dockerImage = ''
     }
     stages{
         stage('Build Maven'){
@@ -17,18 +18,18 @@ pipeline {
         stage('Build docker image'){
             steps{
                 script{
-		     dockerImage = docker.build("rahilnawab/devops-integration:${env.BUILD_NUMBER}")
-		}
+			        dockerImage = docker.build registry + ":$BUILD_NUMBER"
+			 }
             }
         }
-        stage('Push image to Hub'){
-            steps {
-              bat '''
-                docker login -u $DOCKERHUB_CREDENTIALS_USR -p $DOCKERHUB_CREDENTIALS_PSW
-                dockerImage.push()
-                docker logout
-              '''
-           }
+        stage('Push image to DockerHUB'){
+            steps{
+         script {
+            docker.withRegistry( '', registryCredential ) {
+            dockerImage.push()
+                    }   
+                }
+            }
         }
     }
 }
