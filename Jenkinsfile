@@ -18,6 +18,7 @@ pipeline {
             steps{
                 script{
 			dockerImage = docker.build("rahilnawab/devops-integration:${env.BUILD_NUMBER}") .
+			}
             }
         }
         stage('Push image to Hub'){
