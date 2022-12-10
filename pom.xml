@@ -35,10 +35,13 @@
                <plugin>
                    <groupId>org.springframework.boot</groupId>
                    <artifactId>spring-boot-maven-plugin</artifactId>
+				   <configuration>
+                       <finalName>devops-integration</finalName>                   
+                   </configuration>
                </plugin>
            </plugins>
-		   <finalName>devops-integration</finalName>
        </pluginManagement>
     </build>
 
 </project>
+
