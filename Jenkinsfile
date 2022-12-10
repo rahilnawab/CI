@@ -4,7 +4,7 @@ pipeline {
         maven 'maven_3_5_0'
     }
     environment {
-      DOCKERHUB_CREDENTIALS = credentials('docker-pwd')
+      DOCKERHUB_CREDENTIALS = credentials('dockerhub-pwd')
     }
     stages{
         stage('Build Maven'){
