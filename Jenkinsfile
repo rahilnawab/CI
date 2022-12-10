@@ -3,6 +3,9 @@ pipeline {
     tools{
         maven 'maven_3_5_0'
     }
+    environment {
+      DOCKERHUB_CREDENTIALS = credentials('docker-pwd')
+    }
     stages{
         stage('Build Maven'){
             steps{
@@ -18,15 +21,13 @@ pipeline {
             }
         }
         stage('Push image to Hub'){
-            steps{
-                script{
-                   withCredentials([string(credentialsId: 'Dockerhub', variable: 'Dockerhub-pwd')]) {
-                   bat 'docker login registry-1.docker.io -u rahilnawab -p ${Dockerhub-pwd}'
-
-}
-                   sh 'docker push rahilnawab/devops-integration'
-                }
-            }
+            steps {
+              bat '''
+                docker login -u $DOCKERHUB_CREDENTIALS_USR -p $DOCKERHUB_CREDENTIALS_PSW
+                docker push rahilnawab/devops-integration
+                docker logout
+              '''
+           }
         }
     }
 }
