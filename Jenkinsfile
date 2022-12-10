@@ -1,8 +1,5 @@
 pipeline {
     agent any
-    parameters {
-    string defaultValue: '0.1', name: 'Version'
-	}
     tools{
         maven 'maven_3_5_0'
     }
@@ -19,7 +16,7 @@ pipeline {
         stage('Build docker image'){
             steps{
                 script{
-                    bat 'docker build -t rahilnawab/devops-integration:${params.Version} .'
+                    bat 'docker build -t rahilnawab/devops-integration:${env.BUILD_NUMBER} .'
                 }
             }
         }
