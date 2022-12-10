@@ -21,7 +21,7 @@ pipeline {
             steps{
                 script{
                    withCredentials([string(credentialsId: 'Dockerhub', variable: 'Dockerhub')]) {
-                   bat 'docker login -u rahilnawab -p ${Dockerhub}'
+                   bat 'docker login registry-1.docker.io -u rahilnawab -p ${Dockerhub}'
 
 }
                    sh 'docker push rahilnawab/devops-integration'
