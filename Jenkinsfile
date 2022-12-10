@@ -16,7 +16,7 @@ pipeline {
         stage('Build docker image'){
             steps{
                 script{
-                    bat 'docker build -t rahilnawab/devops-integration:${env.BUILD_NUMBER} .'
+                    bat 'docker build -t ("rahilnawab/devops-integration:${env.BUILD_Number}") .'
                 }
             }
         }
