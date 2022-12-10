@@ -5,7 +5,7 @@ pipeline {
     }
     environment {
       registry = "rahilnawab/devops-integration"
-      registryCredential = 'dockerhub'
+      registryCredential = 'dockerhub-pwd'
       dockerImage = ''
     }
     stages{
