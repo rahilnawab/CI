@@ -1,10 +1,13 @@
 pipeline {
     agent any
+    parameters {
+    string defaultValue: '0.1', name: 'Version'
+	}
     tools{
         maven 'maven_3_5_0'
     }
     environment {
-      DOCKERHUB_CREDENTIALS = credentials('dockerhub-pwd')
+      DOCKERHUB_CREDENTIALS = credentials('docker-pwd')
     }
     stages{
         stage('Build Maven'){
@@ -16,7 +19,7 @@ pipeline {
         stage('Build docker image'){
             steps{
                 script{
-                    bat 'docker build -t rahilnawab/devops-integration .'
+                    bat 'docker build -t rahilnawab/devops-integration-${Version} .'
                 }
             }
         }
@@ -24,7 +27,7 @@ pipeline {
             steps {
               bat '''
                 docker login -u $DOCKERHUB_CREDENTIALS_USR -p $DOCKERHUB_CREDENTIALS_PSW
-                docker push rahilnawab/devops-integration
+                docker push rahilnawab/devops-integration-${Version}
                 docker logout
               '''
            }
