@@ -5,6 +5,7 @@ pipeline {
     }
     environment {
       DOCKERHUB_CREDENTIALS = credentials('dockerhub-pwd')
+	  dockerImage = ''
     }
     stages{
         stage('Build Maven'){
@@ -16,15 +17,14 @@ pipeline {
         stage('Build docker image'){
             steps{
                 script{
-                    bat 'docker.build("rahilnawab/devops-integration:${env.BUILD_Number}") .'
-                }
+                    dockerImage = docker.build ("rahilnawab/devops-integration:${env.BUILD_NUMBER")
             }
         }
         stage('Push image to Hub'){
             steps {
               bat '''
                 docker login -u $DOCKERHUB_CREDENTIALS_USR -p $DOCKERHUB_CREDENTIALS_PSW
-                docker push rahilnawab/devops-integration-${Version}
+                dockerImage.push()
                 docker logout
               '''
            }
