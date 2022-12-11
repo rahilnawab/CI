@@ -10,6 +10,7 @@
 	</parent>
 	<groupId>com.javatechie</groupId>
 	<artifactId>springboot-k8s-demo</artifactId>
+	<packaging>jar</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>springboot-k8s-demo</name>
 	<description>Demo project for Spring Boot</description>
@@ -40,17 +41,7 @@
 			   <plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-jar-plugin</artifactId>
-					<version>3.3.0</version>
-					<configuration>
-						<archive>
-							<index>true</index>
-							<manifest>
-								<addClasspath>true</addClasspath>
-								<mainClass>com.javatechie.k8s.SpringbootK8sDemoApplication</mainClass>
-							</manifest>
-						</archive>
-					</configuration>
-				</plugin>
+			   </plugin>
            </plugins>
        </pluginManagement>
     </build>
