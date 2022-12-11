@@ -20,7 +20,7 @@ pipeline {
         stage('Build docker image'){
             steps{
                 script{
-			        dockerImage = docker.build registry + ":$BUILD_NUMBER" , "-f ${dockerfile} ./dockerfiles"
+			        dockerImage = docker.build("rahilnawab/devops-integration:${env.BUILD_Number}", "-f ${dockerfile} ./dockerfiles")
 			 }
             }
         }
