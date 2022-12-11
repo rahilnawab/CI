@@ -4,33 +4,30 @@ pipeline {
         maven 'maven_3_5_0'
     }
     environment {
-      registry = "rahilnawab/devops-integration"
-      registryCredential = 'dockerhub-pwd'
-      dockerImage = ''
+      DOCKERHUB_CREDENTIALS = credentials('dockerhub-pwd')
     }
     stages{
         stage('Build Maven'){
             steps{
                 checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/rahilnawab/CI']]])
-                bat 'mvn clean'
-                bat 'mvn package'
+                bat 'mvn clean install'
             }
         }
         stage('Build docker image'){
             steps{
                 script{
-			        dockerImage = docker.build registry + ":$BUILD_NUMBER"
-			 }
-            }
-        }
-        stage('Push image to DockerHUB'){
-            steps{
-         script {
-            docker.withRegistry( '', registryCredential ) {
-            dockerImage.push()
-                    }   
+                    bat 'docker build -t rahilnawab/devops-integration .'
                 }
             }
+        }
+        stage('Push image to Hub'){
+            steps {
+              bat '''
+                docker login -u $DOCKERHUB_CREDENTIALS_USR -p $DOCKERHUB_CREDENTIALS_PSW
+                docker push rahilnawab/devops-integration
+                docker logout
+              '''
+           }
         }
     }
 }
