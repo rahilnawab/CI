@@ -1,10 +1,10 @@
-package com.javatechie.k8s;
+package com.first.spring;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringbootK8sDemoApplicationTests {
+class ApplicationTests {
 
 	@Test
 	void contextLoads() {
