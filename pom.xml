@@ -46,7 +46,7 @@
 							<index>true</index>
 							<manifest>
 								<addClasspath>true</addClasspath>
-								<mainClass>com.SpringbootK8sDemoApplication</mainClass>
+								<mainClass>com.javatechie.k8s.SpringbootK8sDemoApplication</mainClass>
 							</manifest>
 						</archive>
 					</configuration>
