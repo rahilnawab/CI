@@ -9,7 +9,7 @@
 		<!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.first</groupId>
-	<artifactId>spring</artifactId>
+	<artifactId>stuff</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>helloSpring</name>
 	<description>First project with Spring</description>
