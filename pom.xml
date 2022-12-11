@@ -46,7 +46,7 @@
 							<index>true</index>
 							<manifest>
 								<addClasspath>true</addClasspath>
-								<mainClass>fully.qualified.MainClass</mainClass>
+								<mainClass>com.SpringbootK8sDemoApplication</mainClass>
 							</manifest>
 						</archive>
 					</configuration>
