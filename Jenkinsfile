@@ -12,7 +12,9 @@ pipeline {
         stage('Build Maven'){
             steps{
                 checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/rahilnawab/CI']]])
-                bat 'mvn clean install'
+                bat 'mvn clean'
+                bat 'mvn package'
+                bat 'mvn install'
             }
         }
         stage('Build docker image'){
