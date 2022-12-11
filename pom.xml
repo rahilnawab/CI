@@ -44,7 +44,8 @@
                 <configuration>
                   <archive>
                     <manifest>
-                      <mainClass>com.first.spring.Application</mainClass>
+                      <addClasspath>true</addClasspath>
+		      <mainClass>fully.qualified.MainClass</mainClass>
                     </manifest>
                   </archive>
                 </configuration>
