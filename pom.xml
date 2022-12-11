@@ -54,7 +54,7 @@
                  		 <archive>
                    			 <manifest>
                       				<addClasspath>true</addClasspath>
-		      				<mainClass>java.com.first.spring.Application</mainClass>
+		      				<mainClass>java.com.first.spring.MyWebApplication</mainClass>
                    			 </manifest>
                   		 </archive>
                 		 </configuration>
