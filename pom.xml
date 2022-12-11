@@ -9,7 +9,7 @@
 		<!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.first</groupId>
-	<artifactId>stuff</artifactId>
+	<artifactId>spring</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>helloSpring</name>
 	<description>First project with Spring</description>
@@ -54,7 +54,7 @@
                  		 <archive>
                    			 <manifest>
                       				<addClasspath>true</addClasspath>
-		      				<mainClass>com.first.spring.main</mainClass>
+		      				<mainClass>com.first.spring.Application</mainClass>
                    			 </manifest>
                   		 </archive>
                 		 </configuration>
