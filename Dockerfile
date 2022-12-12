@@ -1,5 +1,5 @@
 FROM openjdk:8
-EXPOSE 8090
-COPY ./ ./ 
+WORKDIR /
 ADD target/devops-integration.jar devops-integration.jar
+EXPOSE 8080
 ENTRYPOINT ["java","-jar","/devops-integration.jar"]
