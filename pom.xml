@@ -41,7 +41,7 @@
 							<manifest>
 								<addClasspath>true</addClasspath>
 								<classpathPrefix>lib/</classpathPrefix>
-								<mainClass>com.first.spring.MyWebApplication</mainClass>
+								<mainClass>com.first.spring</mainClass>
 							</manifest>
 						</archive>
 					</configuration>
