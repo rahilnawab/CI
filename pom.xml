@@ -10,6 +10,7 @@
 	</parent>
 	<groupId>com.first</groupId>
 	<artifactId>spring</artifactId>
+	<packaging>jar</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>helloSpring</name>
 	<description>First project with Spring</description>
