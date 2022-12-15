@@ -31,5 +31,10 @@ pipeline {
               '''
            }
         }
+        stage('Logging off dockerhub'){
+            steps {
+              bat 'docker logout'
+           }
+        }
     }
 }
