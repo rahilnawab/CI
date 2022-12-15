@@ -27,7 +27,6 @@ pipeline {
               bat '''
                 docker login -u $DOCKERHUB_CREDENTIALS_USR -p $DOCKERHUB_CREDENTIALS_PSW
                 docker push rahilnawab/devops-integration:%BUILD_Number%
-                docker logout
               '''
            }
         }
