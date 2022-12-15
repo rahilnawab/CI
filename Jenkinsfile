@@ -27,15 +27,13 @@ pipeline {
             steps{
          script {
             docker.withRegistry( '', registryCredential ) {
-            dockerImage.push()
+            bat '''
+                docker push rahilnawab/devops-integration:%BUILD_Number%
+                docker logout
+              '''
                     }   
                 }
             }
-        }
-        stage('Logging off dockerhub'){
-            steps {
-              bat 'docker logout'
-           }
         }
     }
 }
