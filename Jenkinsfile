@@ -18,7 +18,7 @@ pipeline {
         stage('Building docker image'){
             steps{
                 script{
-                    bat 'docker build ("rahilnawab/devops-integration:%BUILD_Number%") .'
+                    bat 'docker build rahilnawab/devops-integration:%BUILD_Number% .'
                 }
             }
         }
