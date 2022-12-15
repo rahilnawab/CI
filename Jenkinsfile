@@ -3,9 +3,6 @@ pipeline {
     tools{
         maven 'maven_3_5_0'
     }
-    environment {
-      DOCKERHUB_CREDENTIALS = credentials('dockerhub-pwd')
-    }
     stages{
         stage('Building project'){
             steps{
@@ -24,10 +21,12 @@ pipeline {
         }
         stage('Uploading image to DockerHub'){
             steps {
-              bat '''
-                docker login -u $DOCKERHUB_CREDENTIALS_USR -p $DOCKERHUB_CREDENTIALS_PSW
-                docker push rahilnawab/devops-integration:%BUILD_Number%
-              '''
+              withCredentials([usernamePassword(credentialsId: 'dockerhub-pwd', passwordVariable: 'DOCKERHUB_CREDENTIALS_PSW', usernameVariable: 'DOCKERHUB_CREDENTIALS_USR')]) {
+                bat '''
+                    docker login -u $DOCKERHUB_CREDENTIALS_USR -p $DOCKERHUB_CREDENTIALS_PSW
+                    docker push rahilnawab/devops-integration:%BUILD_Number%
+                '''
+                }
            }
         }
         stage('Logging off dockerhub'){
