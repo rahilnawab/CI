@@ -6,12 +6,12 @@ pipeline {
     environment {
       registry = "rahilnawab/devops-integration"
       registryCredential = 'dockerhub-pwd'
-	  tag = bat(script: """git log --format="medium" -1 ${GIT_COMMIT}""", returnStdout:true).trim()
+	  GIT_HASH = GIT_COMMIT.take(7)
     }
     stages{
         stage('Building project'){
             steps{
-			    echo "commit=${GIT_COMMIT}"
+			    echo "commit=${GIT_HASH}"
                 checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/rahilnawab/CI']]])
                 bat 'mvn clean'
                 bat 'mvn package'
