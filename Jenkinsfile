@@ -28,11 +28,15 @@ pipeline {
             steps{
          script {
             docker.withRegistry( '', registryCredential ) {
-            bat '''
-                docker push rahilnawab/devops-integration:%HASH%
-                docker logout
-              '''
+            bat ' docker push rahilnawab/devops-integration:%HASH%'
                     }   
+                }
+            }
+        }
+        stage('Signing out of dockerhub '){
+            steps{
+         script {
+            bat 'docker logout' 
                 }
             }
         }
