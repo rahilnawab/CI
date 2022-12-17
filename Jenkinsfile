@@ -11,7 +11,7 @@ pipeline {
     stages{
         stage('Building project'){
             steps{
-			    echo "commit=${env.tag}"
+			    echo "commit=${GIT_COMMIT}"
                 checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/rahilnawab/CI']]])
                 bat 'mvn clean'
                 bat 'mvn package'
