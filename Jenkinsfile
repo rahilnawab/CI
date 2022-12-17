@@ -6,12 +6,11 @@ pipeline {
     environment {
       registry = "rahilnawab/devops-integration"
       registryCredential = 'dockerhub-pwd'
-	  GIT_HASH = GIT_COMMIT.take(7)
+	  HASH = GIT_COMMIT.take(7)
     }
     stages{
         stage('Building project'){
             steps{
-			    echo "commit=${GIT_HASH}"
                 checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/rahilnawab/CI']]])
                 bat 'mvn clean'
                 bat 'mvn package'
@@ -21,7 +20,7 @@ pipeline {
         stage('Building docker image'){
             steps{
                 script{
-                    bat 'docker build -t rahilnawab/devops-integration:%BUILD_Number% .'
+                    bat 'docker build -t rahilnawab/devops-integration:%HASH% .'
                 }
             }
         }
@@ -30,7 +29,7 @@ pipeline {
          script {
             docker.withRegistry( '', registryCredential ) {
             bat '''
-                docker push rahilnawab/devops-integration:%BUILD_Number%
+                docker push rahilnawab/devops-integration:%HASH%
                 docker logout
               '''
                     }   
