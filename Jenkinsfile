@@ -6,7 +6,7 @@ pipeline {
     environment {
       registry = "rahilnawab/devops-integration"
       registryCredential = 'dockerhub-pwd'
-	  tag = bat(returnStdout: true, script: "git rev-parse --short=10 HEAD")
+	  tag = bat(script: """git log --format="medium" -1 ${GIT_COMMIT}""", returnStdout:true).trim()
     }
     stages{
         stage('Building project'){
