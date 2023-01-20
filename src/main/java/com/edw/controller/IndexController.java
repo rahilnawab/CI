@@ -16,7 +16,7 @@ public class IndexController {
         logger.debug("request served");
 
          return new HashMap<>() {{
-            put("POC8", "Completed");
+            put("Demo", "Completed");
         }};
     }
 }
