@@ -9,7 +9,7 @@ pipeline {
       HASH = GIT_COMMIT.take(7)
     }
     stages{
-        stage('Building project'){
+        stage('Maven Build'){
             steps{
                 checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/rahilnawab/CI']]])
                 bat 'mvn clean'
@@ -17,7 +17,7 @@ pipeline {
 		bat 'mvn install'
             }
         }
-        stage('Building docker image'){
+        stage('Building image'){
             steps{
                 script{
                     bat 'docker build -t rahilnawab/devops-integration:%HASH% .'
