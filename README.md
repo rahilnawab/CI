@@ -1,4 +1,4 @@
-For this project following tools were used
+**For this project following tools were used**
 1) Jenkins version: 2.361.1
 
 Jenkin plugins
@@ -19,6 +19,8 @@ Jenkin plugins
 15. Maven Integration plugin
 16. Pipeline
 17. SnakeYAML API
+
+
 
 2) Git was intalled locally:
 ![image](https://user-images.githubusercontent.com/82196453/215253276-4896ccd0-d144-46ce-b36b-03c2372ff525.png)
