@@ -2,24 +2,23 @@
 1) Jenkins version: 2.361.1
 
 2) Jenkin plugins
-1. All general pluginns for a basic pipeline project
-2. Credentials Binding Plugin
-3. Credentials Plugin
-4. Docker API Plugin
-5. Docker Commons Plugin
-6. Docker Pipeline
-7. Docker plugin
-8. Git
-9. Git client
-10. GitHub
-11. GitHub API Plugin
-12. GitHub Branch Source
-13. Gradle
-14. Image Tag Parameter Plugin (IMP for CD pipeline)
-15. Maven Integration plugin
-16. Pipeline
-17. SnakeYAML API
-
+All general pluginns for a basic pipeline project
+Credentials Binding Plugin
+Credentials Plugin
+Docker API Plugin
+Docker Commons Plugin
+Docker Pipeline
+Docker plugin
+Git
+Git client
+GitHub
+GitHub API Plugin
+GitHub Branch Source
+Gradle
+Image Tag Parameter Plugin (IMP for CD pipeline)
+Maven Integration plugin
+Pipeline
+SnakeYAML API
 
 
 3) Git was intalled locally:
