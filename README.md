@@ -38,6 +38,6 @@
 
 
 
+---------------------------------------------------------------------------------------------------------------------------------------------
 
-
-#This was an CI project, CD project repo is present at https://github.com/rahilnawab/CD
+This was an CI project, CD project repo is present at https://github.com/rahilnawab/CD
