@@ -2,10 +2,10 @@
 1) Jenkins version: 2.361.1
 
 2) Jenkin plugins: 
-All general pluginns for a basic pipeline project
-Credentials Binding Plugin
-Credentials Plugin
-Docker API Plugin
+* All general pluginns for a basic pipeline project
+* Credentials Binding Plugin
+* Credentials Plugin
+* Docker API Plugin
 Docker Commons Plugin
 Docker Pipeline
 Docker plugin
