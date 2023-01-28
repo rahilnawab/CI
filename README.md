@@ -36,3 +36,8 @@
 6) Used Scoop to install HELM
 (https://scoop.sh/) 
 
+
+
+
+
+##CD pipeline is present at https://github.com/rahilnawab/CD
