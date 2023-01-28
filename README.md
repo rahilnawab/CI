@@ -1,7 +1,7 @@
 **For this project following tools were used**
 1) Jenkins version: 2.361.1
 
-2) Jenkin plugins
+2) Jenkin plugins: 
 All general pluginns for a basic pipeline project
 Credentials Binding Plugin
 Credentials Plugin
