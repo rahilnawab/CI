@@ -1,4 +1,4 @@
-**For this project following tools were used**
+# **For this project following tools were used**
 1) Jenkins version: 2.361.1
 
 2) Jenkin plugins: 
@@ -40,4 +40,4 @@
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
-This was an CI project, CD project repo is present at https://github.com/rahilnawab/CD
+# This was an CI project, CD project repo is present at https://github.com/rahilnawab/CD
