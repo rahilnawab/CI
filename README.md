@@ -6,19 +6,19 @@
 * Credentials Binding Plugin
 * Credentials Plugin
 * Docker API Plugin
-Docker Commons Plugin
-Docker Pipeline
-Docker plugin
-Git
-Git client
-GitHub
-GitHub API Plugin
-GitHub Branch Source
-Gradle
-Image Tag Parameter Plugin (IMP for CD pipeline)
-Maven Integration plugin
-Pipeline
-SnakeYAML API
+* Docker Commons Plugin
+* Docker Pipeline
+* Docker plugin
+* Git
+* Git client
+* GitHub
+* GitHub API Plugin
+* GitHub Branch Source
+* Gradle
+* Image Tag Parameter Plugin (IMP for CD pipeline)
+* Maven Integration plugin
+* Pipeline
+* SnakeYAML API
 
 
 3) Git was intalled locally:
