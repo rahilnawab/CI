@@ -1,9 +1,13 @@
 # CI Project
 
-This is a GitHub repository for a continuous integration (CI) project that was done using the following tools and their versions:
+This repository is for a Continuous Integration (CI) project. The main intent of this repository is to demonstrate the setup and operation of a CI pipeline, not to showcase complex Java code. Therefore, we are using a basic Java codebase for this project.
 
-- Jenkins version: 2.361.1
-- Jenkins plugins:
+## Tools and Versions
+
+The project utilizes the following tools:
+
+- **Jenkins**: This is our continuous integration server that automates the building, testing, and deployment of applications. We're using version 2.361.1.
+- **Jenkins Plugins**: These extend the functionality of Jenkins. We're using several plugins including:
   - All general plugins for a basic pipeline project
   - Credentials Binding Plugin
   - Credentials Plugin
@@ -21,19 +25,16 @@ This is a GitHub repository for a continuous integration (CI) project that was d
   - Maven Integration plugin
   - Pipeline
   - SnakeYAML API
-- Git installed locally
-- Maven
-- Docker Desktop for Docker and Kubernetes
-- Scoop to install HELM (https://scoop.sh/)
+- **Maven**: This is a build automation tool used primarily for Java projects.
+- **Docker Desktop**: This provides Docker and Kubernetes functionalities on the desktop. Docker allows us to package our application into containers.
 
-The project demonstrates how to set up a CI pipeline using Jenkins, Git, Maven, Docker, and Kubernetes. The pipeline consists of the following stages:
+## CI Pipeline
 
-- Checkout: The pipeline checks out the code from the GitHub repository.
-- Build: The pipeline builds the code using Maven and creates a JAR file.
-- Package: The pipeline packages the JAR file into a Docker image and tags it with the image tag parameter which is the git commit hash.
+Our CI pipeline consists of the following stages:
+
+- **Maven Build**: In this stage, the pipeline first checks out the code from GitHub, then builds the code using Maven and creates a JAR file.
+- **Building Image**: The pipeline packages the JAR file into a Docker image and tags it with the image tag parameter which is the git commit hash.
+- **Push Image to DockerHUB**: The Docker image is then pushed to DockerHUB.
+- **Signing out of DockerHUB**: Finally, the pipeline signs out of DockerHUB.
 
 The CD repo for this project: https://github.com/rahilnawab/CD
-
-
-
-
