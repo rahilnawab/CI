@@ -1,43 +1,39 @@
-# **For this project following tools were used**
-1) Jenkins version: 2.361.1
+# CI Project
 
-2) Jenkin plugins: 
-* All general pluginns for a basic pipeline project
-* Credentials Binding Plugin
-* Credentials Plugin
-* Docker API Plugin
-* Docker Commons Plugin
-* Docker Pipeline
-* Docker plugin
-* Git
-* Git client
-* GitHub
-* GitHub API Plugin
-* GitHub Branch Source
-* Gradle
-* Image Tag Parameter Plugin (IMP for CD pipeline)
-* Maven Integration plugin
-* Pipeline
-* SnakeYAML API
+This is a GitHub repository for a continuous integration (CI) project that was done using the following tools and their versions:
 
+- Jenkins version: 2.361.1
+- Jenkins plugins:
+  - All general plugins for a basic pipeline project
+  - Credentials Binding Plugin
+  - Credentials Plugin
+  - Docker API Plugin
+  - Docker Commons Plugin
+  - Docker Pipeline
+  - Docker plugin
+  - Git
+  - Git client
+  - GitHub
+  - GitHub API Plugin
+  - GitHub Branch Source
+  - Gradle
+  - Image Tag Parameter Plugin (IMP for CD pipeline)
+  - Maven Integration plugin
+  - Pipeline
+  - SnakeYAML API
+- Git installed locally
+- Maven
+- Docker Desktop for Docker and Kubernetes
+- Scoop to install HELM (https://scoop.sh/)
 
-3) Git was intalled locally:
-![image](https://user-images.githubusercontent.com/82196453/215253276-4896ccd0-d144-46ce-b36b-03c2372ff525.png)
+The project demonstrates how to set up a CI pipeline using Jenkins, Git, Maven, Docker, and Kubernetes. The pipeline consists of the following stages:
 
+- Checkout: The pipeline checks out the code from the GitHub repository.
+- Build: The pipeline builds the code using Maven and creates a JAR file.
+- Package: The pipeline packages the JAR file into a Docker image and tags it with the image tag parameter which is the git commit hash.
 
-4) Maven:
-![image](https://user-images.githubusercontent.com/82196453/215253260-d3aa374e-2961-4fe3-b822-173b63441e08.png)
-
-
-5) Used Docker Desktop for Docker and Kubernetes
-![image](https://user-images.githubusercontent.com/82196453/215253213-e38ee18f-c07f-482d-b4c3-42ab9b87a8ea.png)
-
-
-6) Used Scoop to install HELM
-(https://scoop.sh/) 
+The CD repo for this project: https://github.com/rahilnawab/CD
 
 
 
----------------------------------------------------------------------------------------------------------------------------------------------
 
-# This was an CI project, CD project repo is present at https://github.com/rahilnawab/CD
